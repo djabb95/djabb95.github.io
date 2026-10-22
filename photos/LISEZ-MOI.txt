@@ -1,0 +1,1 @@
+Placez ici photo-couple-1.jpg, souvenir-1.jpg à souvenir-6.jpg, photo-finale.jpg. Vous pouvez modifier ces chemins dans config.js.

@@ -1,0 +1,13 @@
+VOTRE JARDIN SECRET
+Ouvrez index.html pour consulter le site sans installation ni connexion.
+Modifiez config.js dans un éditeur de texte. Tous les textes, titres, boutons, dates, légendes, photos, couleurs et ordre des sections y sont regroupés.
+Remplacez les champs entre crochets, en conservant les guillemets et la ponctuation du code. Dans les textes entre guillemets doubles, écrivez \" pour insérer un guillemet et \n pour un retour à la ligne.
+Placez les photos dans le dossier photos : photo-couple-1.jpg, souvenir-1.jpg à souvenir-6.jpg, photo-finale.jpg. Changez les chemins dans config.js si vous utilisez PNG ou WebP. Évitez les doubles extensions .jpg.jpg.
+Le champ alt décrit la photo pour les lecteurs d'écran.
+La galerie ouvre les souvenirs en grand. Fermez avec Échap, la croix ou un clic sur le fond extérieur.
+L'enveloppe révèle le message secret et peut être refermée.
+Le bouton d'accueil mène à la deuxième section configurée. Le bouton final revient au début.
+Pour réorganiser : modifiez ordre, sans doublon, en conservant accueil en premier. Si une section est retirée, retirez aussi son lien dans navigation.
+Pour publier : envoyez tous ces fichiers et le dossier photos sur un hébergement statique, index.html à sa racine. Après chaque personnalisation, republiez pour mettre à jour le site en ligne.
+Aucun abonnement ni service externe nécessaire pour afficher le site. Aucune police distante, analyse de fréquentation ou bibliothèque externe.
+Publication Sites bloquee par la politique de la session. Aucun lien en ligne operationnel. Les fichiers locaux sont prets a personnaliser et publier.
