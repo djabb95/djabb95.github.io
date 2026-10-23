@@ -8,7 +8,7 @@ c.navigation.forEach(n=>document.querySelector("nav").append(link(n.texte,n.id))
 const dialog=document.querySelector("dialog");
 function heading(s,id){s.append(el("p","eyebrow",c.etiquettes[id]),el(id==="accueil"?"h1":"h2","",c[id].titre));}
 const render={
-accueil(s){s.classList.add("hero");const t=el("div","hero-copy");heading(t,"accueil");t.append(el("p","intro",c.accueil.texte),link(c.accueil.bouton+" ↗",c.ordre[1]||"accueil","button"),el("p","small","✦  "+c.titreSite));const f=el("figure");f.append(photo(c.accueil,"hero-photo"),el("figcaption","",c.accueil.legende));s.append(t,f,leaf());},
+accueil(s){s.classList.add("hero");const t=el("div","hero-copy");heading(t,"accueil");t.append(el("p","intro",c.accueil.texte),link(c.accueil.bouton+" ↗",c.ordre[1]||"accueil","button"),el("p","small","✦  "+c.petitTexte));const f=el("figure");f.append(photo(c.accueil,"hero-photo"),el("figcaption","",c.accueil.legende));s.append(t,f,leaf());},
 souvenirs(s){heading(s,"souvenirs");s.append(el("p","intro",c.souvenirs.texte));const g=el("div","gallery");c.souvenirs.items.forEach((d,i)=>{const b=el("button","memory");b.type="button";b.setAttribute("aria-label","Ouvrir le souvenir "+(i+1));b.append(photo(d),el("span","date",d.date),el("h3","",d.titre),el("p","caption",d.texte));b.onclick=()=>{const f=document.querySelector("dialog .content");f.replaceChildren(photo(d),el("h2","",d.titre),el("p","caption",d.date+" · "+d.texte));dialog.showModal();};g.append(b);});s.append(g);},
 lettre(s){const p=el("article","paper");p.append(el("span","mark","❧"));heading(p,"lettre");p.append(el("p","letter",c.lettre.texte),el("p","signature",c.lettre.signature));s.append(p,leaf());},
 raisons(s){heading(s,"raisons");const g=el("div","reasons");c.raisons.items.forEach((t,i)=>{const a=el("article","reason");a.append(el("span","number","0"+(i+1)),el("span","flower",["❧","✧","❋","✿","❦","✾"][i%6]),el("p","",t));g.append(a);});s.append(g);},
@@ -17,6 +17,6 @@ portrait(s){heading(s,"portrait");s.append(photo(c.portrait,"portrait-photo"),el
 fin(s){s.append(leaf());heading(s,"fin");s.append(el("p","intro",c.fin.texte),el("p","signature",c.fin.signature),link(c.fin.bouton+" ↑","accueil","button secondary"));}
 };
 c.ordre.forEach(id=>{if(!render[id]||document.getElementById(id))return;const s=el("section");s.id=id;render[id](s);document.querySelector("main").append(s);});
-document.querySelector("footer").append(el("span","mark","❧"),el("p","",c.titreSite),link(c.retour,"accueil"));
+document.querySelector("footer").append(el("span","mark","❧"),el("p","",c.piedDePage));
 dialog.querySelector(".close").onclick=()=>dialog.close();dialog.onclick=e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}};
 if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target);}}),{threshold:.05});document.querySelectorAll("section:not(.hero)").forEach(s=>{s.classList.add("reveal");obs.observe(s);});}
